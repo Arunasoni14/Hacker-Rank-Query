@@ -100,7 +100,6 @@ FROM CITY
 | District    | char(20) |
 | Population  | int(11)  |
 +-------------+----------+
-
 */
 
 SOLUTION : - 
