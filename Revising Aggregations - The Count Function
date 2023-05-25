@@ -1,0 +1,129 @@
+/*  # Revising Aggregations - COUNT
+
+1.Query a count of the number of cities in CITY with populations larger than 100,000.
+
+## Input Format
+
+The CITY table is described as follows:
+
++-------------+--------------+
+| Field       | Type         |
++-------------+--------------+
+| ID          | NUMBER       |
+| NAME        | VARCHAR2(17) |
+| COUNTRYCODE | VARCHAR2(3)  |
+| DISTRICT    | VARCHAR2(20) |
+| POPULATION  | NUMBER       |
++-------------+--------------+
+*/
+SOLUTION : - 
+SELECT COUNT(POPULATION)
+FROM CITY
+WHERE POPULATION > 100000;
+
+
+/* # Revising Aggregations - SUM
+
+. Query the total population of all cities in CITY where District is California.
+
+## Input Format
+
+The CITY table is described as follows:
+
++-------------+--------------+
+| Field       | Type         |
++-------------+--------------+
+| ID          | NUMBER       |
+| NAME        | VARCHAR2(17) |
+| COUNTRYCODE | VARCHAR2(3)  |
+| DISTRICT    | VARCHAR2(20) |
+| POPULATION  | NUMBER       |
++-------------+--------------+
+
+*/
+SOLUTION : - 
+SELECT SUM(POPULATION) 
+FROM CITY 
+WHERE DISTRICT = 'CALIFORNIA'
+
+
+/* 3. 
+# Revising Aggregations - Averages
+
+Query the average population of all cities in CITY where DISTRICT is California.
+
+## Input Format
+
+The CITY table is described as follows:
+
++-------------+--------------+
+| Field       | Type         |
++-------------+--------------+
+| ID          | NUMBER       |
+| NAME        | VARCHAR2(17) |
+| COUNTRYCODE | VARCHAR2(3)  |
+| DISTRICT    | VARCHAR2(20) |
+| POPULATION  | NUMBER       |
++-------------+--------------+
+*/
+
+SOLUTION : - 
+SELECT AVG(POPULATION) 
+FROM CITY 
+WHERE DISTRICT = 'CALIFORNIA'
+
+/*  4. Query the the average population of all cities, rounded down to the nearest integer.
++-------------+----------+
+| Field       | Type     |
++-------------+----------+
+| ID          | int(11)  |
+| Name        | char(35) |
+| CountryCode | char(3)  |
+| District    | char(20) |
+| Population  | int(11)  |
++-------------+----------+
+
+*/
+
+SOLUTION : - 
+SELECT FLOOR(AVG(POPULATION))
+FROM CITY 
+
+/* 5.  Query the sum of the populations for all Japanese cities in CITY. The COUNTRYCODE for Japan is JPN.
+
++-------------+----------+
+| Field       | Type     |
++-------------+----------+
+| ID          | int(11)  |
+| Name        | char(35) |
+| CountryCode | char(3)  |
+| District    | char(20) |
+| Population  | int(11)  |
++-------------+----------+
+
+*/
+
+SOLUTION : - 
+SELECT SUM(POPULATION) FROM CITY
+WHERE COUNTRYCODE = 'JPN'
+
+/ * 6 Query the difference between the maximum and minimum populations in CITY.
++-------------+----------+
+| Field       | Type     |
++-------------+----------+
+| ID          | int(11)  |
+| Name        | char(35) |
+| CountryCode | char(3)  |
+| District    | char(20) |
+| Population  | int(11)  |
++-------------+----------+
+
+*/
+SOLUTION : - 
+SELECT MAX(POPULATION) - MIN(POPULATION)
+FROM CITY
+
+
+
+
+
